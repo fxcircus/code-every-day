@@ -6,7 +6,20 @@
  */
 
 function plusMinus(arr) {
-    console.log(arr)
+    const len = arr.length
+    let pos = 0, neg = 0, zero = 0
+
+    arr.forEach(element => {
+        if(element > 0) {
+            pos++
+        } else if (element < 0) {
+            neg++
+        } else {
+            zero++
+        }
+    })
+    
+    console.log(`${(pos / len).toFixed(6)}\n${(neg / len).toFixed(6)}\n${(zero / len).toFixed(6)}`)
 }
 
 plusMinus([1, 1, 0, -1, -1])
