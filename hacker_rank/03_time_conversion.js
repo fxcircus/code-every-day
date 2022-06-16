@@ -22,20 +22,6 @@ function timeConversion(s) {
     return `${hour}${rest}`
 }
 
-console.log(timeConversion('07:05:45PM'))
-console.log(timeConversion('12:40:22AM'))
-console.log(timeConversion('12:01:00AM'))
-
-
-
-/*
-let hour = parseInt(s.slice(0,2))
-    const amOrPm = s.slice(8)
-    const rest = s.slice(2,8)
-    if (amOrPm === 'PM') {
-        hour+=12
-        hour === 24 ? hour = '00' : hour
-    }
-    hour < 10 ? hour = `0${hour}` : hour
-    return `${hour}${rest}`
-    */
+console.log(timeConversion('07:05:45PM')) // 19:05:45
+console.log(timeConversion('12:40:22AM')) // 00:40:22
+console.log(timeConversion('12:01:00AM')) // 00:01:00
