@@ -1,9 +1,12 @@
 function processData(input) {
     const inputArr = input.split('\n')
     inputArr.forEach(line => {
+        console.log(`line is ${line}`)
         const arr = line.split(';')
         const str = arr[2].split('')
         let res = ''
+        console.log(`arr is ${arr}`)
+        console.log(`str is ${str}`)
 
         if(arr[0] === 'S') {
             str.forEach(char => {
