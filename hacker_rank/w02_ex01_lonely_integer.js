@@ -12,12 +12,11 @@ function lonelyinteger(a) {
     for(let key in frequencyCounter) {
         if (frequencyCounter[key] === 1) {
             res = key
-            return
+            return res
         }
     }
 
-
-    return res !== -1 ? res :  'No Lonely Integers. All elements are repeated at least once'
+    return 'No Lonely Integers. All elements are repeated at least once'
 }
 
 lonelyinteger([1, 2, 3, 4, 3, 2, 1])
