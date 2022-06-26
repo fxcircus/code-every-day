@@ -86,10 +86,6 @@ console.log(fib(35)) // 9227465
 
 function fib(num){
     if ( num <= 2) {return 1}
-    console.log(num)
+    // console.log(num)
     return fib(num - 1) + fib(num - 2)
   }
-
-//  fib(3) + fib(2)
-//  fib(2) + fib(1) + 1
-//  1 + 1 + 1 = 3 
