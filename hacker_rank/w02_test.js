@@ -39,18 +39,16 @@ function flippingMatrix(matrix) {
             flipColumn(matrix, i)
         }
     }
-    // console.log(matrix)
+    console.log(matrix)
 
     // PT2: calculate inner matrix sum
     const midPoint = len / 2
     for(let i = 0; i <= midPoint; i++){
         for(let j = 0; j <= midPoint; j++){
-            // console.log(matrix[i][j])
+            console.log(`res=${res}\tadding ${matrix[i][j]} to sum`)
             res+=matrix[i][j]
         }
     }
-
-
     
     return res
 }
