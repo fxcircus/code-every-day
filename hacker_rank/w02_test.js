@@ -28,6 +28,8 @@ const flipColumn = (multArr, rowNum) => {
 // Main: function:
 // ------------------------------------
 function flippingMatrix(matrix) {
+    console.log("\noriginal arr ===>")
+    console.log(matrix)
     let len = matrix.length - 1, res = 0
 
     // PT1: flip rows && columns
@@ -39,9 +41,11 @@ function flippingMatrix(matrix) {
             flipColumn(matrix, i)
         }
     }
+    console.log("\narr after sort ===>")
     console.log(matrix)
 
     // PT2: calculate inner matrix sum
+    console.log("\nsumming internal matrix ===>")
     const midPoint = len / 2
     for(let i = 0; i <= midPoint; i++){
         for(let j = 0; j <= midPoint; j++){
@@ -50,6 +54,7 @@ function flippingMatrix(matrix) {
         }
     }
     
+    console.log("\nfinal sum ===>")
     return res
 }
 
