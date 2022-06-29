@@ -4,8 +4,9 @@
  */
 
 function marsExploration(s) {
-    const arr = s.split('')
+    const arr = s.split('') // create array from string input
     let res = 0
+    // Iterate over 3 chars at a time
     for(let i = 0; i < arr.length; i+=3) {
         console.log(`checking ${arr[i]}${arr[i + 1]}${arr[i + 2]}`)
         if(arr[i] !== "S") {
@@ -22,9 +23,8 @@ function marsExploration(s) {
         }
     }
     return res
-
 }
 
-// console.log(marsExploration("SOSSPSSQSSOR")) // Expected signal: SOSSOSSOSSOS ==> 3
-// console.log(marsExploration("SOSSOT")) // 1
+console.log(marsExploration("SOSSPSSQSSOR")) // Expected signal: SOSSOSSOSSOS ==> 3
+console.log(marsExploration("SOSSOT")) // 1
 console.log(marsExploration("SOSOOSOSOSOSOSSOSOSOSOSOSOS")) // 12
