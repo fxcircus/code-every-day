@@ -27,34 +27,70 @@ const flipColumn = (multArr, rowNum) => {
 // ------------------------------------
 // Main: function:
 // ------------------------------------
-function flippingMatrix(matrix) {
-    console.log("\noriginal arr ===>")
-    console.log(matrix)
-    let len = matrix.length - 1, res = 0
+// function flippingMatrix(matrix) {
+//     console.log("\noriginal arr ===>")
+//     console.log(matrix)
+//     let len = matrix.length - 1, res = 0
 
-    // PT1: flip rows && columns
-    for(let i = 0; i <= len; i++) {
-        if(matrix[i][0] < matrix[i][len]) {
-            flipRow(matrix[i])
-        }
-        if(matrix[0][i] < matrix[len][i]) {
-            flipColumn(matrix, i)
-        }
-    }
-    console.log("\narr after sort ===>")
-    console.log(matrix)
+//     // PT1: flip rows && columns
+//     for(let i = 0; i <= len; i++) {
+//         if(matrix[i][0] < matrix[i][len]) {
+//             flipRow(matrix[i])
+//         }
+//         if(matrix[0][i] < matrix[len][i]) {
+//             flipColumn(matrix, i)
+//         }
+//     }
+//     console.log("\narr after sort ===>")
+//     console.log(matrix)
 
-    // PT2: calculate inner matrix sum
-    console.log("\nsumming internal matrix ===>")
-    const midPoint = len / 2
-    for(let i = 0; i <= midPoint; i++){
-        for(let j = 0; j <= midPoint; j++){
-            console.log(`res=${res}\tadding ${matrix[i][j]} to sum`)
-            res+=matrix[i][j]
-        }
-    }
+//     // PT2: calculate inner matrix sum
+//     console.log("\nsumming internal matrix ===>")
+//     const midPoint = len / 2
+//     for(let i = 0; i <= midPoint; i++){
+//         for(let j = 0; j <= midPoint; j++){
+//             console.log(`res=${res}\tadding ${matrix[i][j]} to sum`)
+//             res+=matrix[i][j]
+//         }
+//     }
     
-    console.log("\nfinal sum ===>")
+//     console.log("\nfinal sum ===>")
+//     return res
+// }
+
+// function flippingMatrix(matrix) {
+//     let len = matrix.length - 1, res = 0
+//     const cornerTL = matrix[0][0], cornerTR = matrix[0][len], cornerBL = matrix[len][0], cornerBR = matrix[len][len]
+//     const arrTB = [], arrLR = [], arrInside = []
+//     for(let i = 0; i <= len; i++) {
+//         for(let j = 0; j <= len; j++) {
+//             if(i === 0 && j === 0) {
+//                 res += Math.max(cornerTL, cornerTR, cornerBL, cornerBR)
+//             } else if(i === 0 && j !== len) {
+//                 arrTB.push(matrix[i][j])
+//                 arrTB.push(matrix[len][j])
+//             } else if(i > 0 && i  < len) {
+//                 arrLR.push(matrix[i][0])
+//                 arrLR.push(matrix[i][len])
+//             }
+//         }
+//     }
+
+//     return arrLR
+// }
+
+function flippingMatrix(matrix) {
+    let len = matrix.length, res = 0
+    
+    for(let i = 0; i <= len - 1; i++) {
+        console.log(`\n----------\ni = ${i}`)
+
+        for(let j = 0; j <= len - 1; j++) {
+            // console.log(matrix[i][j])
+            console.log(`[i][j] = ${matrix[i][j]}\t[i][len-j-1] = ${matrix[i][len-j-1]}\t[len-i-1][j] = ${matrix[len-i-1][j]}\t[len-i-1][len-j-1] = ${matrix[len-i-1][len-j-1]}`)
+        }
+    }
+
     return res
 }
 
