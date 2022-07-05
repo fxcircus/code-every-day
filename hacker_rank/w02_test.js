@@ -80,18 +80,21 @@ const flipColumn = (multArr, rowNum) => {
 // }
 
 function flippingMatrix(matrix) {
-    let len = matrix.length, res = 0
+    let len = matrix.length, sum = 0
     
-    for(let i = 0; i <= len - 1; i++) {
+    for(let i = 0; i <= len / 2; i++) {
         console.log(`\n----------\ni = ${i}`)
-
-        for(let j = 0; j <= len - 1; j++) {
+        for(let j = 0; j <= len / 2; j++) {
             // console.log(matrix[i][j])
             console.log(`[i][j] = ${matrix[i][j]}\t[i][len-j-1] = ${matrix[i][len-j-1]}\t[len-i-1][j] = ${matrix[len-i-1][j]}\t[len-i-1][len-j-1] = ${matrix[len-i-1][len-j-1]}`)
+            console.log(`[${i}][${j}] = ${matrix[i][j]}\t[${i}][${len-j-1}] = ${matrix[i][len-j-1]}\t\t[${len-i-1}][${j}] = ${matrix[len-i-1][j]}\t\t[${len-i-1}][${len-j-1}] = ${matrix[len-i-1][len-j-1]}`)
+            max= Math.max(matrix[i][j], matrix[i][len-j-1], matrix[len-i-1][j], matrix[len-i-1][len-j-1])
+            sum += max
+            console.log(`max = ${max} sum = ${sum}\n`)
         }
     }
 
-    return res
+    return sum
 }
 
 const arr = [
