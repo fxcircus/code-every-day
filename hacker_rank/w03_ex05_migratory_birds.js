@@ -17,6 +17,7 @@ function migratoryBirds(arr) {
             maxIndex=el
         }
     }
+    console.log(freqCount)
     return maxIndex
 }
 
